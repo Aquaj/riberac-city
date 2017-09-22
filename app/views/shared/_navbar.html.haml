@@ -17,18 +17,18 @@
             %li
               = link_to "#" do
                 %i.fa.fa-user
-                = t(".profile", default: "Profile")
+                = t(".profile")
             %li
               = link_to "#" do
                 %i.fa.fa-home
-                = t(".profile", default: "Home")
+                = t(".home")
             %li
               = link_to destroy_user_session_path, method: :delete do
                 %i.fa.fa-sign-out
-                = t(".sign_out", default: "Log out")
+                = t(".sign_out")
     - else
       / Login link (when logged out)
-      = link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link"
+      = link_to t(".sign_in"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link"
   / Dropdown list appearing on mobile only
   .navbar-wagon-item.hidden-md.hidden-lg
     .dropdown
