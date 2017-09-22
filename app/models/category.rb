@@ -1,6 +1,5 @@
 class Category < ApplicationRecord
-  has_many :place_options
-  has_many :options, through: :place_options
+  has_many :options, dependent: :destroy
 
   validates :name, presence: true
 end
