@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170922210200) do
+ActiveRecord::Schema.define(version: 20170922211510) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,8 +41,8 @@ ActiveRecord::Schema.define(version: 20170922210200) do
   create_table "places", force: :cascade do |t|
     t.bigint "user_id"
     t.string "title"
-    t.decimal "latitude"
-    t.decimal "longitude"
+    t.float "latitude"
+    t.float "longitude"
     t.decimal "price"
     t.string "transaction_type"
     t.decimal "surface"
