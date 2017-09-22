@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 
   resources :places, only: [:show]
   namespace :my do
-    resources :places, only: [:index, :new, :create]
+    resources :places, only: [:index, :new, :create, :edit, :update]
   end
 end
