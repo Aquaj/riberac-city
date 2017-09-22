@@ -20,6 +20,7 @@ gem 'simple_form'
 gem 'uglifier'
 
 gem 'geocoder'
+gem 'phony_rails'
 
 group :development, :test do
   gem 'pry-byebug'
