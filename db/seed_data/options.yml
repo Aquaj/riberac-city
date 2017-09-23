@@ -40,3 +40,4 @@ services:
   - climatisation
   - algeco
   - video surveillance
+  - ascenseur
