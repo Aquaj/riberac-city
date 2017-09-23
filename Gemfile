@@ -24,6 +24,10 @@ gem 'jquery-rails'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
+gem 'gmaps4rails'
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
 
 ## Picture management
 gem 'cloudinary'

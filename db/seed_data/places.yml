@@ -48,7 +48,7 @@
     Travaux de rafraîchissement à prévoir
     sans parking
 - title: Hangars à diviser ou entier
-  transaction_type: achat
+  transaction_type: location
   surface: 700
   address: 8 Rue Edouard Manet 47200 Marmande
   ges: <%= rand(0..450) %>

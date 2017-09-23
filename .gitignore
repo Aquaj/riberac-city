@@ -8,3 +8,6 @@ public/assets
 
 # Ignore application configuration
 /config/application.yml
+
+# Ignore byebug byproducts
+.byebug_history

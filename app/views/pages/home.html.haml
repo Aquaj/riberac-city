@@ -1,7 +1,17 @@
-- @categories.each do |cat|
-  = render 'category', category: cat
+/ if no search
+.banner
+  %h1 Achat et location de biens immobiliers professionnels en Pays Ribéracois
 
-- @places.each do |place|
-  = render 'place', place: place
+.results-wrapper
+  .search
+    SEARCH THAT SHIT
+    .results
+      .container-fluid
+        .row
+          - @places.each do |place|
+            .col-sm-4.col-md-3
+              = render "places/place", place: place
 
-= 'We coeur Ribérac wesh'
+
+-# - @categories.each do |cat|
+  -# = render 'category', category: cat
