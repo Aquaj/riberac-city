@@ -11,5 +11,5 @@ class Place < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 
-  scope :with_options, ->(options) { where(PlaceOption.of_options(options).select(:place_id)) }
+  scope :with_options, ->(options) { where(id: PlaceOption.of_options(options).select(:place_id)) }
 end
