@@ -5,7 +5,7 @@
       .col-md-6
         = f.input :title
         = f.input :address
-        = f.input :transaction_type, selected: 1
+        = f.collection :transaction_type, selected: 1
         = f.input :surface
       .col-md-6
         = f.input :ges
