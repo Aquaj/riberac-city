@@ -31,8 +31,9 @@ class PlacesController < ApplicationController
 
   def permitted_params
     params.require(:place_attributes)
-          .permit(:address, :price, :transaction_type,
-                  :surface, :ges,   :energy_class, pictures: [])
+          .permit(:title, :description,      :address,
+                  :price, :transaction_type, :surface,
+                  :ges,   :energy_class,     pictures: [])
   end
 
   def matching_places
