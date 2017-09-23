@@ -10,7 +10,6 @@ class Place < ApplicationRecord
             :surface, :description,   :pictures, presence: true
 
   after_validation :geocode, if: :address_changed?
-
   geocoded_by :address
 
   enum transaction_type: [:achat, :location]
