@@ -11,6 +11,11 @@ gem 'redis'
 
 ## Templating
 gem 'haml-rails'
+## Decorators
+gem 'draper'
+
+## JS-abstraction language
+gem 'coffee-rails'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
