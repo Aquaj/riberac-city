@@ -1,0 +1,42 @@
+type de bien:
+  - agence
+  - alimentation
+  - artisanat
+  - auto-moto service
+  - bien-être beauté
+  - café
+  - entrepôt
+  - hôtel
+  - bureaux
+  - restaurant
+  - commerce spécialisé
+  - equipement maison
+  - grande distribution
+  - divers
+  - loisirs et culture
+  - prêt à porter-textile
+  - santé
+  - service aux entreprises
+  - tabac-presse-loto
+
+type de sol:
+  - parquet
+  - carrelage
+  - béton
+  - linoleum
+
+services:
+  - eau
+  - gaz
+  - électricité
+  - internet
+  - téléphone
+
+équipements:
+  - vestiaires
+  - sanitaires
+  - douches
+  - parking
+  - climatisation
+  - algeco
+  - video surveillance

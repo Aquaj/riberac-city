@@ -1,0 +1,62 @@
+- title: Local bureaux 3 630 m²
+  transaction_type: achat
+  surface: 3630
+  address: Agropole, 47310 Estillac
+  ges: <%= rand(0..450) %>
+  energy_class: <%= rand(0..80) %>
+  price: 997000
+  description: |
+    AGEN, Idéalement situé dans une zone d'activités proche de l'autoroute qui relie en 1 heure BORDEAUX et TOULOUSE, ce grand local de 3200 m² dont 330 m² de bureaux se trouve sur un terrain clos et goudronné de 9 000 m².
+    Il dispose aussi de 400 m² de surfaces supplémentaires sous forme de garages. Le bâtiment est équipé de ponts roulants. Il peut servir d'atelier et de surfaces de stockage, la hauteur sous plafond est de 10 mètres.
+    Actuellement une surface de 1 100 m² est louée 2800 € HT/mois à une très belle entreprise pérenne installée depuis plus de 30 ans et dont le CA avoisine les 8 millions d'€.
+- title: Commerce tabac, presse, FDJ 45 m²
+  transaction_type: achat
+  surface: 45
+  address: 54 Avenue Massenet 47390 Layrac
+  ges: <%= rand(0..450) %>
+  energy_class: <%= rand(0..80) %>
+  price: 168000
+  description: |
+    Située à l'entrée d'un village, sur l'axe principal, avec des places de stationnement, cette belle affaire est idéale pour un couple.Les gérants actuels partent à la retraite. CA: 155 K€, Commissions 80 K€, Loyer 300 €.
+    Je suis à votre disposition pour vous accompagner dans le montage d'un dossier de reprise.
+- title: Commerce hôtel, restaurant 2 100 m²
+  transaction_type: achat
+  surface: 2100
+  address: 1 Rue des Cordeliers, 47700 Casteljaloux
+  ges: <%= rand(0..450) %>
+  energy_class: <%= rand(0..80) %>
+  price: 387800
+  description: |
+    Fonds de commerce hôtel restaurant situé au coeur d'une petite ville thermale du Sud-Ouest à une heure de Bordeaux. L'hôtel est un 2 étoiles composé de 24 chambres , deux salles de restaurant, une salle de séminaire. La surface globale est de 2100 m². Il dispose en sous-sol d'un parking privé pour la clientèle.
+    La moyenne du CA des 3 dernières années est de 420 K€ réalisé pour 1/3 en restauration et 2/3 en hébergement.
+    L' EBE est de 120 K€.
+    L'hôtel est idéalement situé: au centre ville et à proximité des thermes. Vous avez la possibilité d'acquérir les murs pour un prix de 550 000 € ( dossier 499345)
+- title: Bureau 2 pièces 57 m² ;quartier Mériadeck
+  transaction_type: achat
+  surface: 57
+  address: 74 Rue Georges Bonnac, 33000 Bordeaux
+  ges: <%= rand(0..450) %>
+  energy_class: <%= rand(0..80) %>
+  price: 120000
+  description: |
+    Bureau 2 pièces 57 m² ;quartier Mériadeck
+    2 pièces 57 m² ;quartier Mériadeck ;Résidence Jardins de Gambetta ;
+    Taxes foncieres 897€
+    Charges copro :165€/mois
+    gardien;ascenseur (3ème étage);sécurisé par camera;interphone ;
+    climatisation(moteur éléctrique à remplacer);eau potable
+    Travaux de rafraîchissement à prévoir
+    sans parking
+- title: Hangars à diviser ou entier
+  transaction_type: location
+  surface: 700
+  address: 8 Rue Edouard Manet 47200 Marmande
+  ges: <%= rand(0..450) %>
+  energy_class: <%= rand(0..80) %>
+  price: 1
+  description: |
+    Situation proche centre ville Marmande
+    Plusieurs Bâtiments à louer surface à la demande
+    Parking ,algeco bureaux climatisés 75 m2 ,douche,sanitaires possible petit logements gardien
+    Le tout sur un terrain de 2800 m2 sécurisé et vidéo surveillance
+    Possibilité de louer tout le complexe
