@@ -1,4 +1,4 @@
-.content
+.split
   .results-wrapper
     .search
       SEARCH THAT SHIT
@@ -7,7 +7,7 @@
       .container-fluid
         .row
           - @places.each do |place|
-            .col-sm-6.col-md-4
+            .col-sm-12.col-md-6
               = render "places/place", place: place
   .map-wrapper
     = render "places/map", markers_data: @markers_data
