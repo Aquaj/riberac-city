@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   namespace :my do
     resources :places, only: [:index, :new, :create, :edit, :update]
   end
+
+  mount Attachinary::Engine => "/attachinary"
 end

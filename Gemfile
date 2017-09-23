@@ -9,6 +9,7 @@ gem 'puma'
 gem 'rails', '5.1.4'
 gem 'redis'
 
+## Templating
 gem 'haml-rails'
 
 gem 'autoprefixer-rails'
@@ -19,7 +20,15 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 
+## Picture management
+gem 'cloudinary'
+gem 'attachinary'
+gem 'jquery-fileupload-rails'
+
+## Geodata
 gem 'geocoder'
+
+## Phone number validation
 gem 'phony_rails'
 
 group :development, :test do
