@@ -10,10 +10,10 @@ class PagesController < ApplicationController
 
   def matching_places
     places = Place.all
-    options = selected_options
-    places = places.with_options(options)
-    places = places.where(price: price_range)
-    places.order(created_at: :desc)
+    # options = selected_options
+    # places = places.with_options(options)
+    # places = places.where(price: price_range)
+    # places.order(created_at: :desc)
   end
 
   def selected_options
