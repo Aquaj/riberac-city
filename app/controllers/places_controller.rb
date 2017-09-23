@@ -4,15 +4,10 @@ class PlacesController < ApplicationController
   def index
     @categories = Category.includes(:options)
     @places = matching_places.decorate
-    @markers_data = Gmaps4rails.build_markers(@places.object) do |place, marker|
+    @markers_data = Gmaps4rails.build_markers(@places) do |place, marker|
       marker.lat place.latitude
       marker.lng place.longitude
     end
-  end
-
-  def index
-    @categories = Category.includes(:options)
-    @places = matching_places.decorate
   end
 
   def show
@@ -31,7 +26,6 @@ class PlacesController < ApplicationController
       render 'edit'
     end
   end
-
 
 private
 
@@ -62,7 +56,7 @@ private
   def price_range
     min = params[:min_price] || 0
     max = params[:max_price] || Place.maximum(:price)
-    min, max = [max, min] if max > min
+    min, max = [max, min] if max < min
     (min..max)
   end
 end
