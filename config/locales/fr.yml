@@ -6,3 +6,11 @@ fr:
       sign_out: "Se déconnecter"
       profile: "Profil"
       home: "Accueil"
+  my:
+    places:
+      new:
+        title: "Titre"
+        address: "Adresse"
+        energy_class: "Classe d'énergie"
+        price: "Prix"
+        pictures: "Photos"
