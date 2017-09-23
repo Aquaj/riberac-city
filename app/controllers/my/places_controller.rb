@@ -7,6 +7,7 @@ module My
 
     def new
       @place = current_user.places.new
+      @transaction_types = Place.transaction_types.keys.map { |word| word.capitalize }
     end
 
     def create

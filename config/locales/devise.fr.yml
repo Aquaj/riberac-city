@@ -25,6 +25,9 @@ fr:
         unconfirmed_email: Courriel non confirmé
         unlock_token: Clé de déverrouillage
         updated_at: Date de mise à jour
+        first_name: "Prénom"
+        last_name: "Nom de famille"
+        phone_numer: "Numéro de téléphone"
     models:
       user: Utilisateur
   devise:

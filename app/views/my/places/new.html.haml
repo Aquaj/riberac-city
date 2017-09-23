@@ -5,12 +5,23 @@
       .col-md-6
         = f.input :title
         = f.input :address
-        = f.input :transaction_type, selected: 1
+        = f.input :transaction_type, collection: @transaction_types, selected: 1
         = f.input :surface
       .col-md-6
         = f.input :ges
         = f.input :energy_class
         = f.input :price
-        = f.input :pictures, as: :attachinary
+        = f.label :pictures, id: "label_pictures"
+        = f.input :pictures, as: :attachinary, label: false
       .col-md-offset-1.col-md-10
         = f.input :description, input_html: { "rows" => 4 }
+    .text-center
+      = f.submit t(:add), class: "btn btn-warning"
+
+- content_for :after_js do
+  :javascript
+    $(document).ready(function() {
+      $("#place_pictures").css('visibility', 'hidden');
+      $("label#label_pictures").addClass('input-photo');
+      $("label#label_pictures").text('Cliquez et choissisez votre photo');
+    });

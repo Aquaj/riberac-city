@@ -1,0 +1,14 @@
+.input-photo {
+  border: 3px dashed $brand-success;
+  color: $brand-success;
+  padding: 15px 10px;
+  cursor: pointer;
+  &:hover {
+    background: $brand-success;
+    color: white;
+    border: 3px dashed white;
+  }
+}
+#label_pictures {
+  margin: 2% auto;
+}

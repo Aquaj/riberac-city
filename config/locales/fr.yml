@@ -1,4 +1,14 @@
 fr:
+  add: "Ajouter"
+  activerecord:
+    attributes:
+      place:
+        title: "Titre"
+        address: "Adresse"
+        energy_class: "Classe d'énergie"
+        price: "Prix"
+        pictures: "Photos"
+        transaction_type: "Type d'annonce"
   shared:
     navbar:
       sign_in: "Se connecter"
