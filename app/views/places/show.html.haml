@@ -1,0 +1,26 @@
+%img
+%section.place-info
+  %h1= @place.title
+  .basic-info
+    %span#price
+    %span#surface
+  %section.description
+%section.contact
+  %h2= @owner.full_name
+  %address= @place.contact_info
+%section
+  %h2= :selling_points
+  - @place.categories.includes(:options).decorate.uniq.each do |cat|
+    %section
+      %h3= cat.name
+      %p= cat.option_sentence
+%section
+  %section
+    %h2= :dpe
+  %section
+    %h2= :ges
+%section
+  %h2= :address
+  %address= @place.address
+%section.map
+

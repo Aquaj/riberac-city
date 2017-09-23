@@ -3,6 +3,7 @@ class Place < ApplicationRecord
 
   has_many :place_options, dependent: :destroy
   has_many :options, through: :place_options
+  has_many :categories, through: :options
 
   has_attachments :pictures, maximum: 5
 
