@@ -14,7 +14,5 @@ class Place < ApplicationRecord
 
   enum transaction_type: [:achat, :location]
 
-  def self.with_options options
-    where(id: PlaceOption.of_options(options).select(:place_id))
-  end
+  scope :matching_options, ->(options) { where(id: PlaceOption.of_options(options).select(:place_id)) }
 end
