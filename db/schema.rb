@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 20170923123853) do
     t.float "latitude"
     t.float "longitude"
     t.decimal "price"
-    t.string "transaction_type"
+    t.integer "transaction_type", default: 0
     t.decimal "surface"
     t.string "address"
     t.datetime "created_at", null: false

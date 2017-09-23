@@ -5,6 +5,4 @@ class PagesController < ApplicationController
     @categories = Category.includes(:options)
     @places = Place.all.decorate
   end
-
-  private
 end
