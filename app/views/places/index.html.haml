@@ -1,0 +1,13 @@
+.content
+  .results-wrapper
+    .search
+      SEARCH THAT SHIT
+
+    .results
+      .container-fluid
+        .row
+          - @places.each do |place|
+            .col-sm-6.col-md-4
+              = render "places/place", place: place
+  .map-wrapper
+    = render "places/map", markers_data: @markers_data
