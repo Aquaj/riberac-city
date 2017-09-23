@@ -3,14 +3,14 @@
   .container
     .row
       .col-md-6
-        = f.input :title, label: t(".title")
-        = f.input :address, label: t(".address")
-        = f.input :transaction_type, selected: 1
+        = f.input :title
+        = f.input :address
+        = f.input :transaction_type, collection: Place.transaction_type, selected: 1
         = f.input :surface
       .col-md-6
         = f.input :ges
-        = f.input :energy_class, label: t(".energy_class")
-        = f.input :price, label: t(".price")
-        = f.input :pictures, as: :attachinary, label: t('.pictures')
+        = f.input :energy_class
+        = f.input :price
+        = f.input :pictures, as: :attachinary
       .col-md-offset-1.col-md-10
         = f.input :description, input_html: { "rows" => 4 }
