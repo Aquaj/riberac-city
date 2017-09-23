@@ -1,0 +1,8 @@
+fr:
+  shared:
+    navbar:
+      sign_in: "Se connecter"
+      sign_up: "S'inscrire"
+      sign_out: "Se déconnecter"
+      profile: "Profil"
+      home: "Accueil"

@@ -39,7 +39,7 @@ module My
     def permitted_params
       params.require(:place_attributes)
             .permit(:address, :price, :transaction_type,
-                    :surface, :ges,   :energy_class)
+                    :surface, :ges,   :energy_class, pictures: [])
     end
   end
 end
