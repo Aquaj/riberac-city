@@ -3,15 +3,20 @@ class PagesController < ApplicationController
 
   def home
     @categories = Category.includes(:options)
-    @places = Place.where(id: PlaceOption.where(option_id: options.select(:id)).select(:place_id)).decorate
+    @places = matching_places.decorate
   end
 
   private
 
-  def options
+  def matching_places
+    places = Place.all
+    options = selected_options
+    places = places.with_options(options) if options.any?
+    places.order(created_at: :desc)
+  end
+
+  def selected_options
     option_ids = params.permit(:option_ids)[:option_ids]
-    collection = Option.all
-    collection = collection.where(id: option_ids) if option_ids
-    collection
+    Option.where(id: option_ids)
   end
 end
