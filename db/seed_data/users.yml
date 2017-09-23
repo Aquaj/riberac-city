@@ -1,0 +1,16 @@
+- email: admin@riberac.fr
+  password: azerty
+  first_name: Jean-Pierre
+  last_name: Dupond
+  phone_number: 0650884556
+  admin: true
+- email: seller@riberac.fr
+  password: azerty
+  first_name: Jean-Paul
+  last_name: Dupont
+  phone_number: 0607080910
+- email: user@riberac.fr
+  password: azerty
+  first_name: Jean-Jacques
+  last_name: Dupon
+  phone_number: 0708091011

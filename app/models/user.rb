@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  phony_normalize :phone_number, default_country_code: 'FR'
+
   has_many :places, dependent: :destroy
 
   validates :phone_number, phony_plausible: true

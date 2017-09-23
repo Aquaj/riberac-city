@@ -1,4 +1,6 @@
 class Place < ApplicationRecord
+  extend Enumerize
+
   belongs_to :user
 
   has_many :place_options, dependent: :destroy
@@ -10,4 +12,6 @@ class Place < ApplicationRecord
 
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
+
+  enumerize :transaction_type, in: ['achat', 'location']
 end
