@@ -1,5 +1,6 @@
 fr:
-  active_record:
+  add: "Ajouter"
+  activerecord:
     attributes:
       place:
         title: "Titre"
@@ -7,6 +8,7 @@ fr:
         energy_class: "Classe d'énergie"
         price: "Prix"
         pictures: "Photos"
+        transaction_type: "Type d'annonce"
   shared:
     navbar:
       sign_in: "Se connecter"
