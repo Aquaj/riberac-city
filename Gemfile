@@ -33,9 +33,6 @@ gem 'jquery-fileupload-rails'
 ## Geodata
 gem 'geocoder'
 
-## Enums
-gem 'enumerize'
-
 ## Phone number validation
 gem 'phony_rails'
 
