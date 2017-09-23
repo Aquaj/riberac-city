@@ -1,11 +1,11 @@
-%h2.text-center Ajouter son local
+%h2.text-center Ajouter son annonce
 = simple_form_for @place, url: my_places_path do |f|
   .container
     .row
       .col-md-6
         = f.input :title
         = f.input :address
-        = f.input :transaction_type, collection: @transaction_types, selected: 1
+        = f.input :transaction_type, collection: Place.transaction_types, selected: 1
         = f.input :surface
       .col-md-6
         = f.input :ges
