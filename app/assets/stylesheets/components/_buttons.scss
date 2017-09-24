@@ -11,3 +11,12 @@
     background: white;
   }
 }
+.btn-orange {
+  @extend .cta;
+  display: inline-block;
+  margin: 0 auto;
+  background: $orange;
+  &:hover {
+    color: $orange;
+  }
+}

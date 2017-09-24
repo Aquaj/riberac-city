@@ -1,0 +1,38 @@
+.place-banner {
+  background-size: cover;
+  height: 400px;
+}
+.wrapper-place {
+  margin: 3% 0;
+  .place-title {
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .place-contact {
+    padding: 15px 25px;
+    background: #f1f6ea;
+    .place-phone {
+      font-size: 26px;
+      color: $orange;
+      font-weight: bold;
+    }
+  }
+  .description {
+    text-align: justify;
+  }
+  .place-card-title {
+    font-size: 20px;
+    font-weight: bold;  
+  }
+  .place-category {
+    .category-svg {
+      height: 50px;
+      margin-right: 10px;
+    }
+    .place-category-title {
+      color: #b3b3b2;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
+}
