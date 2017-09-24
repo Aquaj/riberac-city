@@ -1,5 +1,6 @@
 fr:
   add: "Ajouter"
+  send: "Envoyer"
   activerecord:
     attributes:
       place:

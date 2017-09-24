@@ -1,3 +1,5 @@
+- content_for :title, 'Ajouter son annonce - Ribérent'
+
 %h2.text-center Ajouter son annonce
 = simple_form_for @place, url: my_places_path do |f|
   .container
@@ -25,7 +27,7 @@
       $("label#label_pictures").addClass('input-photo');
       $("label#label_pictures").text('Cliquez et choissisez votre photo');
       $('#place_description').wysihtml5({ toolbar: {
-                                                      "image": false
+        "image": false
         }
       });
     });

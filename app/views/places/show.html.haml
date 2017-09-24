@@ -1,3 +1,5 @@
+- content_for :title, "#{@place.title} - Ribérent"
+
 .place-banner{ style: "background-image: url('#{cl_image_path @place.pictures.first.path}');"}
 .wrapper-place
   .container
@@ -18,7 +20,7 @@
           .text-center.place-phone= format_phone_number @place.user.phone_number
           .text-center ou
           .text-center
-            = link_to 'Contacter par mail', new_contact_path(place_id: @place.id), data: { toggle: :modal, target: '#contact-modal' }, class: '.btn-orange'
+            = link_to 'Contacter par mail', new_contact_path(place_id: @place.id), data: { toggle: :modal, target: '#contact-modal' }, class: 'btn-orange'
     .row
       .col-md-6
         .place-card-title Atouts
@@ -32,7 +34,8 @@
                 %div= image_tag svg_selector(cat.name), class: "category-svg"
                 %div
                   .place-category-title= cat.name.capitalize
-                  .place-options-name= @place.options.joins(:category).where("categories.name = ?", cat.name).map { |opt| opt.name.capitalize }.join(", ")
+                  - options = @place.options.where(category: cat)
+                  .place-options-name= options.any? ? options.map { |opt| opt.name.capitalize }.join(", ") : '&mdash;'.html_safe
     .row
       .col-md-6
         .place-card-title

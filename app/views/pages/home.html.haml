@@ -1,3 +1,5 @@
+- content_for :title, 'Ribérent'
+
 / if no search
 .banner{style: "background-image: url(#{image_path 'banner.jpg'})"}
   %h1 Achat et location de biens immobiliers professionnels en Pays Ribéracois
@@ -5,12 +7,12 @@
 .results-wrapper
   .search
     = render 'places/search'
-    .results
-      .container-fluid
-        .row
-          - @places.each do |place|
-            .col-sm-4
-              = render "places/place", place: place
+  .results
+    .container-fluid
+      .row
+        - @places.each do |place|
+          .col-sm-4
+            = render "places/place", place: place
 
 
 -# - @categories.each do |cat|
