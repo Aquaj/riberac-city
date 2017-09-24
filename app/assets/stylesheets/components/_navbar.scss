@@ -5,16 +5,27 @@
   }
   .navbar-links {
     display: flex;
-    font-size: 16px;
+    font-size: 12px;
+    font-weight: bold;
   }
   a {
     display: block;
-    padding: 10px 15px;
+    padding: 7px 10px;
+    margin: 5px 5px;
     color: white;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
     text-decoration: none;
     &:hover {
       color: $green;
+    }
+  }
+  .navbar-cta {
+    color: white;
+    background: $green;
+    border-radius: 5px;
+    &:hover {
+      color: $green;
+      background: white;
     }
   }
 }

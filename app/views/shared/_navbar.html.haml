@@ -3,6 +3,8 @@
     = link_to "Ribérent", root_path
   .navbar-links
     - if user_signed_in?
+      %div= link_to "AJOUTER UNE ANNONCE", new_my_place_path, class: "navbar-cta"
+      %div= link_to "MES ANNONCES", my_places_path
       %div= link_to t(".sign_out").upcase, user_registration_path, method: :delete
     - else
       %div= link_to t(".sign_up").upcase, new_user_registration_path

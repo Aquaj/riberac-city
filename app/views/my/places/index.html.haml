@@ -1,0 +1,13 @@
+
+- if @places.any?
+  .container-fluid
+    .row
+      - @places.each do |place|
+        .col-sm-12.col-md-6
+          = render "places/place", place: place
+- else
+  .blank-slate
+    Vous n'avez pas encore créé d'annonce, on pourrait commencer par là ;)
+    %br
+    %br
+    = link_to "AJOUTER UNE ANNONCE", new_my_place_path, class: "cta"
