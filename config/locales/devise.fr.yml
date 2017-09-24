@@ -27,7 +27,7 @@ fr:
         updated_at: Date de mise à jour
         first_name: "Prénom"
         last_name: "Nom de famille"
-        phone_numer: "Numéro de téléphone"
+        phone_number: "Numéro de téléphone"
     models:
       user: Utilisateur
   devise:

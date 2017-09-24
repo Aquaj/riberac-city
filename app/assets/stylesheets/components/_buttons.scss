@@ -1,0 +1,13 @@
+.cta {
+  padding: 7px 10px;
+  color: white;
+  background: $green;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+    color: $green;
+    background: white;
+  }
+}

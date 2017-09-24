@@ -12,7 +12,7 @@ class Place < ApplicationRecord
   after_validation :geocode, if: :address_changed?
   geocoded_by :address
 
-  enum transaction_type: [:achat, :location]
+  enum transaction_type: [:Achat, :Location]
 
   scope :matching_options, ->(options) { where(id: PlaceOption.of_options(options).select(:place_id)) }
 end

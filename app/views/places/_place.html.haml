@@ -1,4 +1,10 @@
 .place.card
-  .photo
-  .title= place.title
-  .partial_description= place.short_description
+  = image_tag_or_default(place.pictures.first, width: 460, height: 270, class: "card-thumbnail")
+  .card-content
+    .card-title
+      = place.title
+    .split
+      .card-price
+        = money place.price
+      .card-surface
+        = area place.surface

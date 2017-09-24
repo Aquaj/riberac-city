@@ -1,42 +1,11 @@
-.navbar-wagon
-  / Logo
-  = link_to root_path, class: "navbar-wagon-brand" do
-    .logo Ribérent
-  / Right Navigation
-  .navbar-wagon-right.hidden-xs.hidden-sm
+.navbar-riberent.split
+  .navbar-logo
+    = link_to "Ribérent", root_path
+  .navbar-links
     - if user_signed_in?
-      / Links when logged in
-      = link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link"
-      = link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link"
-      = link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link"
-      / Avatar with dropdown menu
-      .navbar-wagon-item
-        .dropdown
-          = image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown"
-          %ul.dropdown-menu.dropdown-menu-right.navbar-wagon-dropdown-menu
-            %li
-              = link_to "#" do
-                %i.fa.fa-user
-                = t(".profile")
-            %li
-              = link_to "#" do
-                %i.fa.fa-home
-                = t(".home")
-            %li
-              = link_to destroy_user_session_path, method: :delete do
-                %i.fa.fa-sign-out
-                = t(".sign_out")
+      %div= link_to "AJOUTER UNE ANNONCE", new_my_place_path, class: "navbar-cta"
+      %div= link_to "MES ANNONCES", my_places_path
+      %div= link_to t(".sign_out").upcase, user_registration_path, method: :delete
     - else
-      / Login link (when logged out)
-      = link_to t(".sign_in"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link"
-  / Dropdown list appearing on mobile only
-  .navbar-wagon-item.hidden-md.hidden-lg
-    .dropdown
-      %i.fa.fa-bars.dropdown-toggle{"data-toggle" => "dropdown"}
-      %ul.dropdown-menu.dropdown-menu-right.navbar-wagon-dropdown-menu
-        %li
-          %a{:href => "#"} Some mobile link
-        %li
-          %a{:href => "#"} Other one
-        %li
-          %a{:href => "#"} Other one
+      %div= link_to t(".sign_up").upcase, new_user_registration_path
+      %div= link_to t(".sign_in").upcase, new_user_session_path
