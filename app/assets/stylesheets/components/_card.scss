@@ -29,3 +29,13 @@
     font-size: 22px;
   }
 }
+
+.card-link {
+  color: unset;
+  text-decoration: none;
+
+  &:hover,&:focus {
+    text-decoration: none;
+    color: unset;
+  }
+}
