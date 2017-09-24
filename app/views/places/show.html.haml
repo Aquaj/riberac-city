@@ -3,32 +3,35 @@
   .container
     .row
       .col-md-offset-1.col-md-5
-        .place-title= @place.title
-        .place-details
-          .price= @place.price
-          .surface= @place.surface
-        .description= @place.description
+        .card.sm-marged
+          .place-title= @place.title
+          .split.sm-marged
+            .card-price= money @place.price
+            .card-surface= area @place.surface
+          .description= @place.description
       .col-md-5
         .place-contact
           .text-center
             Contacter
             = "#{@place.user.first_name} #{@place.user.last_name.split("").first.upcase}."
-          .text-center
-            appeler au
-          .text-center.place-phone= @place.user.phone_number
+          .text-center appeler au
+          .text-center.place-phone= format_phone_number @place.user.phone_number
+          .text-center ou
+          .orange-btn.text-center Contacter par mail
     .row
       .col-md-offset-1.col-md-10
         .place-card-title Atouts
     / Categories cards
     .row
       .col-md-offset-1.col-md-10
-        .container
-          .row
-            - @categories.each do |cat|
-              .col-md-6
-                .place-category-title= cat.name.capitalize
-                .place-options-name= @place.options.joins(:category).where("categories.name = ?", cat.name).map { |opt| opt.name.capitalize }.join(", ")
-
+        .row
+          - @categories.each do |cat|
+            .col-md-6
+              .place-category.sm-marged.split-start
+                %div= image_tag svg_selector(cat.name), class: "category-svg"
+                %div
+                  .place-category-title= cat.name.capitalize
+                  .place-options-name= @place.options.joins(:category).where("categories.name = ?", cat.name).map { |opt| opt.name.capitalize }.join(", ")
     .row
       .col-md-offset-1.col-md-5
         .place-card-title 
@@ -40,6 +43,6 @@
           .ges-graph
     .row
       .col-md-offset-1.col-md-10
-        .place-card-title Adresse
+        .sm-marged.place-card-title Adresse
         .place-card-address= @place.address
 .wrapper-map
