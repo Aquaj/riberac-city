@@ -13,11 +13,12 @@
     justify-content: center;
     border-right: 2px solid $light-gray;
     &-modal-toggle {
-      height: 31px;
+      height: 30px;
       width: 100%;
     }
   }
   &-price {
+    padding: 0 10px;
     flex: 3;
     display: flex;
     flex-direction: column;
@@ -26,10 +27,13 @@
     border-right: 2px solid $light-gray;
     &-inputs {
       display: flex;
+      justify-content: space-between;
+      text-align: center;
       align-items: center;
       width: 100%;
       .price-input {
-        width: 100px;
+        text-align: right;
+        width: 80px;
       }
       &-from {
         flex: 1;
@@ -38,15 +42,24 @@
         width: 50%;
       }
       &-to {
+        text-align: right;
         flex: 1;
         width: 50%;
       }
     }
   }
   &-submit {
+    padding-left: 10px;
     flex: 2;
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  .place-option {
+    background: $light-gray;
+    padding: 3px 5px;
+    border-radius: 3px;
+    margin-right: 3px;
+    display: inline-block;
   }
 }

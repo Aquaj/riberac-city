@@ -2,8 +2,8 @@
   .search-bar
     .search-bar-options
       %label Type de bien
-      %div{class: 'search-bar-options-modal-toggle', data: {toggle: 'modal', target: '#search-modal'}}
-
+      %div{class: 'search-bar-options-modal-toggle', id: "selected-options", data: {toggle: 'modal', target: '#search-modal'}}
+        Cliquez ici pour choisir des options
       .modal.fade#search-modal{role: 'dialog', aria: {labelledby: 'myModalLabel', hidden: 'true'}}
         .modal-dialog
           .modal-content
@@ -24,7 +24,7 @@
         .search-bar-price-inputs-from
           = f.input_field :price_min, value: @price_range&.min, placeholder: '100 000', class: 'price-input'
           %span €
-        %div{style: 'margin: 0 50px'} à
+        %div à
         .search-bar-price-inputs-to
           = f.input_field :price_max, value: @price_range&.max, placeholder: '500 000', class: 'price-input'
           %span €

@@ -9,7 +9,7 @@ class PlacesController < ApplicationController
     @places = matching_places
     @places = @places.decorate
 
-    @selected_option_ids = selected_options.pluck(:id)
+    @selected_option_ids = ((selected_options == Category.find_by_name("type de bien").options.pluck(:id)) ? selected_options : [])
     @price_range = price_range
 
     @markers_data = Gmaps4rails.build_markers(@places) do |place, marker|
@@ -64,7 +64,7 @@ private
 
   def selected_options
     option_ids = params.dig(:search, :option_ids)&.reject(&:blank?)
-    option_ids.to_a.any? ? Option.where(id: option_ids) : Option.all
+    option_ids.to_a.any? ? Option.where(id: option_ids) : Category.find_by_name("type de bien").options
   end
 
   def price_range
