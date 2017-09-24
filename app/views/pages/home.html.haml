@@ -4,13 +4,13 @@
 
 .results-wrapper
   .search
-    = render "places/search"
-  .results
-    .container-fluid
-      .row
-        - @places.each do |place|
-          .col-sm-4
-            = render "places/place", place: place
+    = render 'shared/search_bar'
+    .results
+      .container-fluid
+        .row
+          - @places.each do |place|
+            .col-sm-4
+              = render "places/place", place: place
 
 
 -# - @categories.each do |cat|

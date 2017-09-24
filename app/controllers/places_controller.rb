@@ -1,5 +1,7 @@
 class PlacesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :find_place, only: [:show, :edit, :update]
+  before_action :set_categories, only: [:index, :show]
 
   def index
     @categories = Category.includes(:options)
@@ -18,15 +20,16 @@ class PlacesController < ApplicationController
   end
 
   def show
-    @place = find_place
+    @markers_data = Gmaps4rails.build_markers(@place) do |place, marker|
+      marker.lat place.latitude
+      marker.lng place.longitude
+    end
   end
 
   def edit
-    @place = find_place
   end
 
   def update
-    @place = find_place
     if @place.update(permitted_params)
       redirect_to @place
     else
@@ -36,8 +39,12 @@ class PlacesController < ApplicationController
 
 private
 
+  def set_categories
+    @categories = Category.includes(:options)
+  end
+
   def find_place
-    Place.find(params[:id]).decorate
+    @place = Place.find(params[:id]).decorate
   end
 
   def permitted_params
