@@ -1,4 +1,4 @@
-class Search
+class SearchPlaces
   # Validations
   include ActiveModel::Validations
   include ActiveModel::Conversion
@@ -21,5 +21,9 @@ class Search
 
   def persisted?
     false # which means this object persisted in the database.
+  end
+
+  def results
+    
   end
 end

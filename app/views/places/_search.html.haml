@@ -1,17 +1,32 @@
-.search
-  = simple_form_for :search, url: places_path, method: :get do |f|
-    %div
-      %label
-        Type de bien
-      = f.input_field :option_ids, as: :check_boxes, collection: Category.find_by_name("type de bien").options
+= simple_form_for :search, url: places_path, method: :get do |f|
+  .search-bar
+    .search-bar-options
+      %label Type de bien
+      %div{class: 'search-bar-options-modal-toggle', data: {toggle: 'modal', target: '#search-modal'}}
 
-    %div
-      %label
-        Votre budget
-      = f.input_field :price_min
-      €
-      à
-      = f.input_field :price_max
-      €
-
-    = f.submit "Rechercher"
+      .modal.fade#search-modal{role: 'dialog', aria: {labelledby: 'myModalLabel', hidden: 'true'}}
+        .modal-dialog
+          .modal-content
+            .modal-header
+              %button{type: 'button', class: 'close', data: {dismiss: 'modal'}, aria: {hidden: :true}} &times;
+              %h4{class: 'modal-title', id: 'myModalLabel'}Type de bien
+            .modal-body
+              = f.input_field :option_ids,
+                  as: :check_boxes,
+                  collection: Category.find_by_name("type de bien").options,
+                  checked: @selected_option_ids
+            .modal-footer
+              %button{type: 'button', class: 'btn cta-default', data: {dismiss: 'modal'}} Annuler
+              %button{type: 'button', class: 'btn cta-primary', data: {dismiss: 'modal'}} Ok
+    .search-bar-price
+      %label Prix
+      .search-bar-price-inputs
+        .search-bar-price-inputs-from
+          = f.input_field :price_min, value: @price_range&.min, placeholder: '100 000', class: 'price-input'
+          %span €
+        %div{style: 'margin: 0 50px'} à
+        .search-bar-price-inputs-to
+          = f.input_field :price_max, value: @price_range&.max, placeholder: '500 000', class: 'price-input'
+          %span €
+    .search-bar-submit
+      %button{class: 'btn btn-lg btn-block search-btn'} Rechercher

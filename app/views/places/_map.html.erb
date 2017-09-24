@@ -1,7 +1,7 @@
-#map
+<div id="map" style="height: <%= height %>"></div>
 
-- content_for :after_js do
-  :javascript
+<% content_for :after_js do %>
+  <script>
     var theme = [
       {
         "featureType":"landscape.man_made",
@@ -141,8 +141,17 @@
     ]
 
     handler = Gmaps.build('Google');
-    handler.buildMap({ provider: { styles: theme }, internal: {id: 'map'}}, function(){
-      markers = handler.addMarkers(#{raw(markers_data.to_json)});
+    var mapOptions = {
+      styles: theme
+    }
+    handler.buildMap({ provider: mapOptions, internal: {id: 'map'}}, function(){
+      markers = handler.addMarkers(<%= raw(markers_data.to_json) %>);
       handler.bounds.extendWith(markers);
+
       handler.fitMapToBounds();
+      <% if @markers_data.one? %>
+        handler.getMap().setZoom(12);
+      <% end %>
     });
+  </script>
+<% end %>
