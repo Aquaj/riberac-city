@@ -14,7 +14,7 @@
         = f.label :pictures, id: "label_pictures"
         = f.input :pictures, as: :attachinary, label: false
       .col-md-offset-1.col-md-10
-        = f.input :description, input_html: { "rows" => 4 }
+        = f.input :description
     .text-center
       = f.submit t(:add), class: "btn btn-warning"
 
@@ -24,4 +24,8 @@
       $("#place_pictures").css('visibility', 'hidden');
       $("label#label_pictures").addClass('input-photo');
       $("label#label_pictures").text('Cliquez et choissisez votre photo');
+      $('#place_description').wysihtml5({ toolbar: {
+                                                      "image": false
+        }
+      });
     });

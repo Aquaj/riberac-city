@@ -6,4 +6,5 @@
 //= require attachinary
 //= require underscore
 //= require gmaps/google
+//= require bootstrap-wysihtml5
 //= require_tree .

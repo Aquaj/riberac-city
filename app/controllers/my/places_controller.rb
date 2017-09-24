@@ -10,8 +10,9 @@ module My
     end
 
     def create
-      if @place = current_user.places.create(permitted_params)
-        redirect_to @place
+      @place = current_user.places.create(permitted_params)  
+      if @place.save!
+        redirect_to my_places_path
       else
         render 'new'
       end
@@ -37,9 +38,10 @@ module My
     end
 
     def permitted_params
-      params.require(:place_attributes)
-            .permit(:address, :price, :transaction_type,
-                    :surface, :ges,   :energy_class, pictures: [])
+      params.require(:place)
+            .permit(:title, :address, :price, :transaction_type,
+                    :surface, :ges,   :energy_class, :description, pictures: [])
+            .tap { |param| param[:transaction_type] = param[:transaction_type].to_i if param[:transaction_type]}
     end
   end
 end

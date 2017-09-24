@@ -25,6 +25,7 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'gmaps4rails'
+gem 'bootstrap-wysihtml5-rails'
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
 end
