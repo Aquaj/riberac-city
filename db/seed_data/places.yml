@@ -1,5 +1,5 @@
 - title: Local bureaux 3 630 m²
-  transaction_type: achat
+  transaction_type: Achat
   surface: 3630
   address: 46 Pey de Grue, 24350 Montagrier
   ges: <%= rand(0..450) %>
@@ -10,7 +10,7 @@
     Il dispose aussi de 400 m² de surfaces supplémentaires sous forme de garages. Le bâtiment est équipé de ponts roulants. Il peut servir d'atelier et de surfaces de stockage, la hauteur sous plafond est de 10 mètres.
     Actuellement une surface de 1 100 m² est louée 2800 € HT/mois à une très belle entreprise pérenne installée depuis plus de 30 ans et dont le CA avoisine les 8 millions d'€.
 - title: Commerce tabac, presse, FDJ 45 m²
-  transaction_type: achat
+  transaction_type: Achat
   surface: 45
   address: 6 Rue de Bussac, 24350 Lisle
   ges: <%= rand(0..450) %>
@@ -20,7 +20,7 @@
     Située à l'entrée d'un village, sur l'axe principal, avec des places de stationnement, cette belle affaire est idéale pour un couple.Les gérants actuels partent à la retraite. CA: 155 K€, Commissions 80 K€, Loyer 300 €.
     Je suis à votre disposition pour vous accompagner dans le montage d'un dossier de reprise.
 - title: Commerce hôtel, restaurant 2 100 m²
-  transaction_type: achat
+  transaction_type: Achat
   surface: 2100
   address: 2 Avenue de Verdun 24600 Ribérac
   ges: <%= rand(0..450) %>
@@ -32,7 +32,7 @@
     L'EBE est de 120 K€.
     L'hôtel est idéalement situé: au centre ville et à proximité des thermes. Vous avez la possibilité d'acquérir les murs pour un prix de 550 000 € ( dossier 499345)
 - title: Bureau 2 pièces 57 m²
-  transaction_type: achat
+  transaction_type: Achat
   surface: 57
   address: 1 Place Joseph Debonnière, 24600 Ribérac
   ges: <%= rand(0..450) %>
@@ -48,7 +48,7 @@
     Travaux de rafraîchissement à prévoir
     sans parking
 - title: Hangars à diviser ou entier
-  transaction_type: location
+  transaction_type: Location
   surface: 700
   address: 20 Le Bourg, 24190 Saint-André-de-Double
   ges: <%= rand(0..450) %>
