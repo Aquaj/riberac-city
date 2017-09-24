@@ -18,7 +18,7 @@
           .text-center.place-phone= format_phone_number @place.user.phone_number
           .text-center ou
           .text-center
-            = link_to 'Contacter par mail', new_contact_path(place_id: @place.id), data: { toggle: :modal, target: '#contact-modal' }, class: '.btn-orange'
+            = link_to 'Contacter par mail', new_contact_path(place_id: @place.id), data: { toggle: :modal, target: '#contact-modal' }, class: 'btn-orange'
     .row
       .col-md-6
         .place-card-title Atouts
