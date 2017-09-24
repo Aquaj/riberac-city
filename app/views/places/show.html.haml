@@ -32,7 +32,8 @@
                 %div= image_tag svg_selector(cat.name), class: "category-svg"
                 %div
                   .place-category-title= cat.name.capitalize
-                  .place-options-name= @place.options.joins(:category).where("categories.name = ?", cat.name).map { |opt| opt.name.capitalize }.join(", ")
+                  - options = @place.options.where(category: cat)
+                  .place-options-name= options.any? ? options.map { |opt| opt.name.capitalize }.join(", ") : '&mdash;'.html_safe
     .row
       .col-md-6
         .place-card-title
