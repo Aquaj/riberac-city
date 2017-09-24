@@ -40,11 +40,11 @@
       .col-md-6
         .place-card-title
           DPE
-        %div= render "graph_dpe"
+        %div= render "graph_dpe", dpe: @place.energy_class
       .col-md-6
         .place-card-title
           GES
-        %div= render "graph_ges"
+        %div= render "graph_ges", ges: @place.ges
     .row
       .col-md-6
         .sm-marged.place-card-title Adresse
