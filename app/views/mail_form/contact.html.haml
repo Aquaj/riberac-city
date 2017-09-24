@@ -1,0 +1,10 @@
+- if @resource.email_address == @resource.dest
+  %p= "Voici le message que vous avez envoyé à #{@resource.place.user.first_name} #{@resource.place.user.last_name[0].upcase}."
+  %hr
+
+%h3= "#{@resource.name} vous a envoyé un message concernant l'annonce: #{@resource.place.title}"
+
+%blockquote
+  %p= @resource.message
+
+%p= "Vous pouvez lui répondre à l'adresse: #{@resource.email_address}"

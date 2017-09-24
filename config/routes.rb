@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :places, only: [:index, :show]
+  resources :contacts, only: [:new, :create]
   namespace :my do
     resources :places, only: [:index, :new, :create, :edit, :update]
   end

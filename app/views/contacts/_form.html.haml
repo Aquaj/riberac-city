@@ -1,0 +1,10 @@
+.modal-header
+  Contact
+.modal-body
+  = simple_form_for @contact, remote: true do |f|
+    = f.input  :place_id, as: :hidden
+    = f.input  :name
+    = f.input  :email_address
+    = f.input  :message, as: :text
+    = f.input  :send_copy, as: :boolean
+    = f.submit :send
