@@ -29,4 +29,8 @@ class Contact < MailForm::Base
     self.dest = self.email_address
     self
   end
+
+  def send_copy=(value)
+    @send_copy = (value != "0")
+  end
 end
