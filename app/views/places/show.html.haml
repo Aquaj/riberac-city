@@ -10,7 +10,7 @@
           .split.sm-marged
             .card-price= money @place.price
             .card-surface= area @place.surface
-          .description= @place.description
+          .description= raw(@place.description)
       .col-md-5
         .place-contact
           .text-center
