@@ -40,6 +40,10 @@ gem 'geocoder'
 ## Phone number validation
 gem 'phony_rails'
 
+## Contact form
+gem 'mail_form'
+gem 'letter_opener'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'

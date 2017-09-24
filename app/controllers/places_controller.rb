@@ -30,7 +30,7 @@ class PlacesController < ApplicationController
 private
 
   def find_place
-    current_user.places.find(params[:place_id]).decorate
+    Place.find(params[:id]).decorate
   end
 
   def permitted_params
