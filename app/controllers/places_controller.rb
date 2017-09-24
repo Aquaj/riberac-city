@@ -70,7 +70,7 @@ private
   def price_range
     price_max = params[:search][:price_max].to_i
     min = params[:search][:price_min].to_i
-    max = price_max.present? ? price_max : Place.maximum(:price)
+    max = price_max.zero? ? Place.maximum(:price) : price_max
     min, max = [max, min] if max < min
     (min..max.to_i)
   end

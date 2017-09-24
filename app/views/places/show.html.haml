@@ -35,16 +35,15 @@
                   .place-options-name= @place.options.joins(:category).where("categories.name = ?", cat.name).map { |opt| opt.name.capitalize }.join(", ")
     .row
       .col-md-6
-        .place-card-title 
+        .place-card-title
           DPE
         %div= render "graph_dpe"
       .col-md-6
-        .place-card-title 
+        .place-card-title
           GES
         %div= render "graph_ges"
     .row
       .col-md-6
         .sm-marged.place-card-title Adresse
         .place-card-address= @place.address
-.map-wrapper
-  = render "places/map", markers_data: @markers_data
+  = render "places/map", markers_data: @markers_data, height: "300px"

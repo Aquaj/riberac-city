@@ -52,6 +52,9 @@
     text-decoration: none;
     color: $orange;
     background: white;
+  }
+}
+
 .btn-orange {
   @extend .cta;
   display: inline-block;
