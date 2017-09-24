@@ -1,0 +1,45 @@
+.place-banner{ style: "background-image: url('#{cl_image_path @place.pictures.first.path}');"}
+.wrapper-place
+  .container
+    .row
+      .col-md-offset-1.col-md-5
+        .place-title= @place.title
+        .place-details
+          .price= @place.price
+          .surface= @place.surface
+        .description= @place.description
+      .col-md-5
+        .place-contact
+          .text-center
+            Contacter
+            = "#{@place.user.first_name} #{@place.user.last_name.split("").first.upcase}."
+          .text-center
+            appeler au
+          .text-center.place-phone= @place.user.phone_number
+    .row
+      .col-md-offset-1.col-md-10
+        .place-card-title Atouts
+    / Categories cards
+    .row
+      .col-md-offset-1.col-md-10
+        .container
+          .row
+            - @categories.each do |cat|
+              .col-md-6
+                .place-category-title= cat.name.capitalize
+                .place-options-name= @place.options.joins(:category).where("categories.name = ?", cat.name).map { |opt| opt.name.capitalize }.join(", ")
+
+    .row
+      .col-md-offset-1.col-md-5
+        .place-card-title 
+          DPE
+          .dpe-graph
+      .col-md-5
+        .place-card-title 
+          GES
+          .ges-graph
+    .row
+      .col-md-offset-1.col-md-10
+        .place-card-title Adresse
+        .place-card-address= @place.address
+.wrapper-map
