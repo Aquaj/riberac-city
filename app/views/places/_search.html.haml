@@ -1,0 +1,17 @@
+.search
+  = simple_form_for :search, url: places_path, method: :get do |f|
+    %div
+      %label
+        Type de bien
+      = f.input_field :option_ids, as: :check_boxes, collection: Category.find_by_name("type de bien").options
+
+    %div
+      %label
+        Votre budget
+      = f.input_field :price_min
+      €
+      à
+      = f.input_field :price_max
+      €
+
+    = f.submit "Rechercher"
