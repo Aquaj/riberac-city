@@ -10,16 +10,13 @@
     color: $green;
     background: white;
   }
-}.orange-btn {
-  padding: 7px 10px;
-  color: white;
+}
+.btn-orange {
+  @extend .cta;
+  display: inline-block;
+  margin: 0 auto;
   background: $orange;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-  text-decoration: none;
   &:hover {
-    text-decoration: none;
     color: $orange;
-    background: white;
   }
 }

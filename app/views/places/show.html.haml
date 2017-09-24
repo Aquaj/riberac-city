@@ -2,7 +2,7 @@
 .wrapper-place
   .container
     .row
-      .col-md-offset-1.col-md-5
+      .col-md-7
         .card.sm-marged
           .place-title= @place.title
           .split.sm-marged
@@ -17,13 +17,14 @@
           .text-center appeler au
           .text-center.place-phone= format_phone_number @place.user.phone_number
           .text-center ou
-          .orange-btn.text-center Contacter par mail
+          .text-center
+            .btn-orange Contacter par mail
     .row
-      .col-md-offset-1.col-md-10
+      .col-md-6
         .place-card-title Atouts
     / Categories cards
     .row
-      .col-md-offset-1.col-md-10
+      .col-md-12
         .row
           - @categories.each do |cat|
             .col-md-6
@@ -33,16 +34,17 @@
                   .place-category-title= cat.name.capitalize
                   .place-options-name= @place.options.joins(:category).where("categories.name = ?", cat.name).map { |opt| opt.name.capitalize }.join(", ")
     .row
-      .col-md-offset-1.col-md-5
+      .col-md-6
         .place-card-title 
           DPE
         %div= render "graph_dpe"
-      .col-md-5
+      .col-md-6
         .place-card-title 
           GES
         %div= render "graph_ges"
     .row
-      .col-md-offset-1.col-md-10
+      .col-md-6
         .sm-marged.place-card-title Adresse
         .place-card-address= @place.address
-.wrapper-map
+.map-wrapper
+  = render "places/map", markers_data: @markers_data

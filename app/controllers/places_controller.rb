@@ -12,6 +12,10 @@ class PlacesController < ApplicationController
   end
 
   def show
+    @markers_data = Gmaps4rails.build_markers(@place) do |place, marker|
+      marker.lat place.latitude
+      marker.lng place.longitude
+    end
   end
 
   def edit
