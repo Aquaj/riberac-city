@@ -3,15 +3,18 @@
     %div
       %label
         Type de bien
-      = f.input_field :option_ids, as: :check_boxes, collection: Category.find_by_name("type de bien").options
+      = f.input_field :option_ids,
+          as: :check_boxes,
+          collection: Category.find_by_name("type de bien").options,
+          checked: @selected_option_ids
 
     %div
       %label
         Votre budget
-      = f.input_field :price_min
+      = f.input_field :price_min, value: @price_range&.min
       €
       à
-      = f.input_field :price_max
+      = f.input_field :price_max, value: @price_range&.max
       €
 
     = f.submit "Rechercher"
