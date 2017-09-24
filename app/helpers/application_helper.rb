@@ -16,6 +16,19 @@ module ApplicationHelper
     "#{thousand_separator surface.to_i} m²"
   end
 
+  def format_phone_number phone_number
+    phone_number.gsub(/\+33/, "0").scan(/\d{2}/).join(".")
+  end
+
+  def svg_selector category_name
+    case category_name
+      when "type de bien" then "type-de-bien.svg"
+      when "type de sol" then "type-de-sol.svg"
+      when "services" then "services.svg"
+      when "équipements" then "équipements.svg"
+    end
+  end
+
 private
   def thousand_separator str
     str.to_s.reverse.gsub(/...(?=.)/,'\& ').reverse

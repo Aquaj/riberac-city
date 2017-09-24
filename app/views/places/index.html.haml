@@ -1,13 +1,22 @@
 .split
   .results-wrapper
     .search
-      SEARCH THAT SHIT
+      = render "places/search"
 
     .results
-      .container-fluid
-        .row
-          - @places.each do |place|
-            .col-sm-12.col-md-6
-              = render "places/place", place: place
+      - if @places.any?
+        .container-fluid
+          .row
+            - @places.each do |place|
+              .col-sm-12.col-md-6
+                = render "places/place", place: place
+      - else
+        .blank-slate
+          Malheureusement, nous n'avons trouvé
+          %strong aucun résultat
+          pour votre recherche.
+          %br
+          %br
+          = link_to "RÉINITIALISER LA RECHERCHE", places_path, class: "cta"
   .map-wrapper
     = render "places/map", markers_data: @markers_data

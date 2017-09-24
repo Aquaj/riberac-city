@@ -1,4 +1,4 @@
-.place.card
+.card
   = image_tag_or_default(place.pictures.first, width: 460, height: 270, class: "card-thumbnail")
   .card-content
     .card-title
@@ -8,3 +8,4 @@
         = money place.price
       .card-surface
         = area place.surface
+  = link_to "", place_path(place), class: "card-link"
