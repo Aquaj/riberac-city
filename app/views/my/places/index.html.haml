@@ -7,7 +7,9 @@
           = render "places/place", place: place
 - else
   .blank-slate
-    Vous n'avez pas encore créé d'annonce, on pourrait commencer par là ;)
+    Vous n'avez
+    %strong pas encore d'annonce
+    , on pourrait commencer par là ;)
     %br
     %br
     = link_to "AJOUTER UNE ANNONCE", new_my_place_path, class: "cta"
