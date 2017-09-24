@@ -1,22 +1,34 @@
-.graph
-  .class-a.ges-a
-    &leq; 5
-    %span A
-  .class-b.ges-b
-    6 à 10
-    %span B
-  .class-c.ges-c
-    11 à 20
-    %span C
-  .class-d.ges-d
-    21 à 35
-    %span D
-  .class-e.ges-e
-    36 à 55
-    %span E
-  .class-f.ges-f
-    56 à 80
-    %span F
-  .class-g.ges-g
-    > 80
-    %span G
+- classes = { (0..5) => :A,
+    (6..10) => :B,
+    (11..20) => :C,
+    (21..35) => :D,
+    (36..55) => :E,
+    (56..80) => :F,
+    (80..90) => :G }
+- current_class = classes.select { |range, _| range.include? ges }
+- previous_classes = classes.count { |range, _| range.last < ges }
+- previous_classes = [previous_classes, classes.length - 1].min
+- current_class = classes.to_a.last if current_class.empty?
+- current_range, _current_name = current_class.to_a
+
+.graph-container
+  .graph
+    - classes.each do |ges_class|
+      - class_range, class_name = ges_class
+      - classes = ["class-#{class_name.downcase} ges-#{class_name.downcase}"]
+      - classes << 'current' if class_range.include?(ges)
+      %div{class: classes}
+        :ruby
+          beginning = case [class_range.first, 450].min
+                      when 0   then '&leq; '
+                      when 450 then '&gt; '
+                      else "#{class_range.first} à "
+                      end
+          finish = [class_range.last, 450].min
+        = "#{beginning} #{finish}".html_safe
+        %span= class_name
+  .cursor-bar
+    - previous_classes.times do
+      %div.empty
+    .cursor
+      %span= ges
