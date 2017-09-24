@@ -1,6 +1,7 @@
-.navbar
-  .navbar-left= link_to "Ribérent", root_path
-  .navbar-right
+.navbar-riberent.split
+  .navbar-logo
+    = link_to "Ribérent", root_path
+  .navbar-links
     - if user_signed_in?
       %div= link_to t(".sign_out").upcase, user_registration_path, method: :delete
     - else
