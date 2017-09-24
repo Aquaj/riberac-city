@@ -11,3 +11,46 @@
     background: white;
   }
 }
+
+.cta-primary {
+  padding: 7px 10px;
+  color: white;
+  background: $orange;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+    color: $orange;
+    background: white;
+  }
+}
+
+.cta-default {
+  padding: 7px 10px;
+  color: $gray;
+  background: white;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border-color: #adadad;
+  &:hover {
+    text-decoration: none;
+    color: $gray;
+    background: #e6e6e6;
+  }
+}
+
+.search-btn {
+  padding: 10px 10px;
+  color: white;
+  background: $orange;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+    color: $orange;
+    background: white;
+  }
+}
